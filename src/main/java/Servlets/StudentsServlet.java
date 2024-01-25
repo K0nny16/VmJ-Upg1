@@ -27,9 +27,10 @@ public class StudentsServlet extends HttpServlet {
         for(String studentInfo : students){
             out.println("<p>"+studentInfo+"</p>");
         }out.println("</ul>");
-        out.println("</body>");
+        out.println("<br>");
         out.println("<a href= http://localhost:9090/Attendance> Students</a>");
         out.println("<a href= http://localhost:9090/Courses> Students</a>");
+        out.println("</body>");
         out.println("</html>");
     }
 }
