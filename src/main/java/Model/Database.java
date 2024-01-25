@@ -1,12 +1,18 @@
 package Model;
+import io.github.cdimascio.dotenv.Dotenv;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
-
 public class Database {
-    private static final String connection = "jdbc:mysql://localhost:3306/GritAcademy?user=root&password=";
+    static Dotenv dotenv = Dotenv.load();
+    public static String port = dotenv.get("PORT");
+    public static String user = dotenv.get("USER");
+    public static String db = dotenv.get("DB");
+    public static String pw = dotenv.get("PW");
+    private static final String connection = "jdbc:mysql://localhost:"+port+"/"+db+"?user="+user+"&password="+pw;
     public static ArrayList<String> students(){
         ArrayList<String> student = new ArrayList<>();
         try{
