@@ -28,6 +28,8 @@ public class StudentsServlet extends HttpServlet {
             out.println("<p>"+studentInfo+"</p>");
         }out.println("</ul>");
         out.println("</body>");
+        out.println("<a href= http://localhost:9090/Attendance> Students</a>");
+        out.println("<a href= http://localhost:9090/Courses> Students</a>");
         out.println("</html>");
     }
 }
