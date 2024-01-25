@@ -17,19 +17,23 @@ public class AttendanceServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         PrintWriter out = resp.getWriter();
         out.println("<html>");
-        out.println("<head><title>Attendance List</title></head>");
-        out.println("<body>");
+        out.println("<head><title>Student List</title></head>");
+        out.println("<style>");
+        out.println("table { width: 70%; border-collapse: collapse; margin-bottom: 20px; }");
+        out.println("th, td { border: 1px solid black; padding: 8px; text-align: left; }");
+        out.println("</style>");
         out.println("<h2> Attendance List </h2>");
-        out.println("<ul>");
+        out.println("<table border=\"1\">");
+        out.println("<tr><th>Name</th><th>Course</th></tr>");
         ArrayList<String> attendance = Database.attendance();
-        for(String attendanceInfo : attendance){
-            out.println("<p>"+attendanceInfo+"</p>");
-            out.println("<hr>");
+        for(String attendanceInfo : attendance ){
+            String[] fields = attendanceInfo.split(",");
+            out.println("<tr><td>"+fields[0]+" "+fields[1]+"</td><td>"+fields[2]+"</td></tr>");
         }
-        out.println("</ul>");
+        out.println("</table>");
         out.println("<br>");
-        out.println("<a href= http://localhost:9090/Students> Students</a>");
         out.println("<a href= http://localhost:9090/Courses> Courses</a>");
+        out.println("<a href= http://localhost:9090/Students> Students</a>");
         out.println("</body>");
         out.println("</html>");
     }
