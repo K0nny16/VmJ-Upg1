@@ -58,7 +58,7 @@ public class Database {
             Statement statement = conn.createStatement();
             ResultSet rs = statement.executeQuery("SELECT students.fname, students.lname,courses.name FROM attendance JOIN students ON attendance.students_id = students.id JOIN courses ON attendance.courses_id = courses.id ORDER BY students.id ASC");
             while(rs.next()){
-                attendanceInfo = rs.getString("fname")+" "+rs.getString("lname")+" : "+rs.getString("name");
+                attendanceInfo = rs.getString("fname")+" "+rs.getString("lname")+" :"+rs.getString("name");
                 attendance.add(attendanceInfo);
             }
             conn.close();

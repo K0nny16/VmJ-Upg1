@@ -24,7 +24,9 @@ public class AttendanceServlet extends HttpServlet {
         ArrayList<String> attendance = Database.attendance();
         for(String attendanceInfo : attendance){
             out.println("<p>"+attendanceInfo+"</p>");
-        }out.println("</ul>");
+            out.println("<hr>");
+        }
+        out.println("</ul>");
         out.println("<br>");
         out.println("<a href= http://localhost:9090/Students> Students</a>");
         out.println("<a href= http://localhost:9090/Courses> Courses</a>");

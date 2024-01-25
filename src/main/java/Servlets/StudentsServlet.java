@@ -26,7 +26,9 @@ public class StudentsServlet extends HttpServlet {
         ArrayList<String> students = Database.students();
         for(String studentInfo : students){
             out.println("<p>"+studentInfo+"</p>");
-        }out.println("</ul>");
+            out.println("<hr>");
+        }
+        out.println("</ul>");
         out.println("<br>");
         out.println("<a href= http://localhost:9090/Attendance> Attendance</a>");
         out.println("<a href= http://localhost:9090/Courses> Courses</a>");
