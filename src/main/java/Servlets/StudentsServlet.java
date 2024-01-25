@@ -16,6 +16,6 @@ import java.sql.Statement;
 public class StudentsServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        Database.content();
+        Database.students();
     }
 }
