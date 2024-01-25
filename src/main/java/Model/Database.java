@@ -22,7 +22,7 @@ public class Database {
             Statement statement = conn.createStatement();
             ResultSet rs = statement.executeQuery("SELECT *FROM Students");
             while(rs.next()){
-               studentInfo = rs.getString("fname")+" "+rs.getString("lname")+" "+rs.getString("town")+" "+rs.getString("hobby");
+               studentInfo = rs.getString("fname")+","+rs.getString("lname")+","+rs.getString("town")+","+rs.getString("hobby");
                student.add(studentInfo);
             }
             conn.close();
@@ -40,7 +40,7 @@ public class Database {
             Statement statement = conn.createStatement();
             ResultSet rs = statement.executeQuery("SELECT *FROM Courses");
             while(rs.next()){
-                coursesInfo = rs.getString("name")+" "+rs.getInt("YHP")+" "+rs.getString("description")+" "+rs.getString("lector");
+                coursesInfo = rs.getString("name")+","+rs.getInt("YHP")+","+rs.getString("description")+","+rs.getString("lector");
                 courses.add(coursesInfo);
             }
             conn.close();
@@ -58,7 +58,7 @@ public class Database {
             Statement statement = conn.createStatement();
             ResultSet rs = statement.executeQuery("SELECT students.fname, students.lname,courses.name FROM attendance JOIN students ON attendance.students_id = students.id JOIN courses ON attendance.courses_id = courses.id ORDER BY students.id ASC");
             while(rs.next()){
-                attendanceInfo = rs.getString("fname")+" "+rs.getString("lname")+" :"+rs.getString("name");
+                attendanceInfo = rs.getString("fname")+","+rs.getString("lname")+","+rs.getString("name");
                 attendance.add(attendanceInfo);
             }
             conn.close();
