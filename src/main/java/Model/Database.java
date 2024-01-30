@@ -7,7 +7,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 public class Database {
     static Dotenv dotenv = Dotenv.load();
-    public static String port = dotenv.get("PORT");
+    public static String port = dotenv.get("Port");
     public static String user = dotenv.get("User");
     public static String db = dotenv.get("DB");
     public static String pw = dotenv.get("PW");
