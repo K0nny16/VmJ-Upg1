@@ -34,7 +34,7 @@
             <version>2.3.2</version>
         </dependency>
     </dependencies>
-    
+
      <build>
         <plugins>
             <plugin>
@@ -53,9 +53,6 @@
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
-                    <compilerArguments>
-                        <endorseddirs>${endorsed.dir}</endorseddirs>
-                    </compilerArguments>
                 </configuration>
             </plugin>
             <plugin>

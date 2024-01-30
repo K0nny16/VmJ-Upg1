@@ -1,6 +1,5 @@
 package Model;
 import io.github.cdimascio.dotenv.Dotenv;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -9,10 +8,11 @@ import java.util.ArrayList;
 public class Database {
     static Dotenv dotenv = Dotenv.load();
     public static String port = dotenv.get("PORT");
-    public static String user = dotenv.get("USER");
+    public static String user = dotenv.get("User");
     public static String db = dotenv.get("DB");
     public static String pw = dotenv.get("PW");
-    private static final String connection = "jdbc:mysql://localhost:"+port+"/"+db+"?user="+user+"&password="+pw;
+    private static final String connection = "jdbc:mysql://localhost:" + port + "/" + db + "?user=" + user +"&password="+pw;
+
     public static ArrayList<String> students(){
         ArrayList<String> student = new ArrayList<>();
         try{
@@ -28,6 +28,7 @@ public class Database {
             conn.close();
         }catch (Exception ex){
             ex.getStackTrace();
+            System.err.println("Exception: "+ex.getMessage());
         }
         return student;
     }
@@ -46,6 +47,7 @@ public class Database {
             conn.close();
         }catch(Exception ex){
             ex.getStackTrace();
+            System.err.println("Exception: "+ex.getMessage());
         }
         return courses;
     }
@@ -64,6 +66,7 @@ public class Database {
             conn.close();
         }catch (Exception ex){
             ex.getStackTrace();
+            System.err.println("Exception: "+ex.getMessage());
         }
         return attendance;
     }
