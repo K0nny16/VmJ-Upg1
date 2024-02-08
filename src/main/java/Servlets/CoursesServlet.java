@@ -21,7 +21,7 @@ public class CoursesServlet extends HttpServlet {
         out.println("th, td { border: 1px solid black; padding: 8px; text-align: left; }");
         out.println("</style>");
         out.println("<h2> Courses List </h2>");
-        out.println("<table border=\"1\">");
+        out.println("<table border=1>");
         out.println("<tr><th>Name</th><th>YHP</th><th>Description</th><th>Lector</th></tr>");
         ArrayList<String> courses = Database.courses();
         for(String coursesInfo : courses){

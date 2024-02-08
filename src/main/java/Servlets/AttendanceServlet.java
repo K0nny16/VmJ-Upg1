@@ -23,7 +23,7 @@ public class AttendanceServlet extends HttpServlet {
         out.println("th, td { border: 1px solid black; padding: 8px; text-align: left; }");
         out.println("</style>");
         out.println("<h2> Attendance List </h2>");
-        out.println("<table border=\"1\">");
+        out.println("<table border=1>");
         out.println("<tr><th>Name</th><th>Course</th></tr>");
         ArrayList<String> attendance = Database.attendance();
         for(String attendanceInfo : attendance ){

@@ -20,12 +20,12 @@ public class StudentsServlet extends HttpServlet {
         PrintWriter out = resp.getWriter();
         out.println("<html>");
         out.println("<head><title>Student List</title></head>");
-        out.println("<style>");
-        out.println("table { width: 70%; border-collapse: collapse; margin-bottom: 20px; }");
-        out.println("th, td { border: 1px solid black; padding: 8px; text-align: left; }");
-        out.println("</style>");
+        out.print("<nav>");
+        out.println("<a href= http://localhost:9090/Attendance> Attendance</a>");
+        out.println("<a href= http://localhost:9090/Courses> Courses</a>");
+        out.print("</nav>");
         out.println("<h2> Students List </h2>");
-        out.println("<table border=\"1\">");
+        out.println("<table border=1>");
         out.println("<tr><th>Name</th><th>Town</th><th>Hobby</th></tr>");
         ArrayList<String> students = Database.students();
         for(String studentInfo : students){
@@ -34,8 +34,6 @@ public class StudentsServlet extends HttpServlet {
         }
         out.println("</table>");
         out.println("<br>");
-        out.println("<a href= http://localhost:9090/Attendance> Attendance</a>");
-        out.println("<a href= http://localhost:9090/Courses> Courses</a>");
         out.println("</body>");
         out.println("</html>");
     }
