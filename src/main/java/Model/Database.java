@@ -11,7 +11,7 @@ public class Database {
     public static String user = dotenv.get("User");
     public static String db = dotenv.get("DB");
     public static String pw = dotenv.get("PW");
-    private static final String connection = "jdbc:mysql://localhost:" + port + "/" + db + "?user=" + user +"&password="+pw;
+    private static final String connection = "jdbc:mysql://localhost:"+port +"/"+ db +"?user="+user+"&password="+pw;
 
     public static ArrayList<String> students(){
         ArrayList<String> student = new ArrayList<>();
