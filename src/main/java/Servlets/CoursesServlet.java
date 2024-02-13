@@ -20,6 +20,7 @@ public class CoursesServlet extends HttpServlet {
         out.println("</head>");
         out.println("<body>");
         out.println("<nav>");
+        out.println("<a href=http://localhost:9090/Courses>Courses</a>");
         out.println("<a href=http://localhost:9090/Attendance>Attendance</a>");
         out.println("<a href=http://localhost:9090/Students>Students</a>");
         out.println("</nav>");
